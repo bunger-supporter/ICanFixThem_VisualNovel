@@ -9,8 +9,21 @@ define j = Character("Jess")
 define x = Character("???")
 
 
-# The game starts here, labels separate sections of the story + 
+#code taken from online for a player naming themselves, dw about it
+define yn = Character("[yname]")
+default povname = "Beb Brisk"
+
 label start:
+    $ yname = renpy.input("What is your name?")
+    $ yname = yname.strip()
+
+    if not yname:
+        $yname = "Beb Brisk"
+    jump beginning
+
+
+# The game starts here, labels separate sections of the story + 
+label beginning:
 
     #below is the background. Its simple, if you have image (ex. slimulation.png) you type "scene slimulation" without including file type.
 
@@ -25,7 +38,7 @@ label start:
     #???
     #who are you?
     #in game
-    x "who are you?"
+    yn "who are you?"
 
     hide wally
     show toebeans
@@ -33,7 +46,8 @@ label start:
     #appears like:
     #Goo
     #Goo, but my full name is actually Goober.
-    g "Goo, but my full name is actually Goober."
+    #cps effects speed that text appears, you can also do {b} for bold and {i} for italics, you can even change text size with {size}, {p} adds a break in one message so you have to press enter again
+    g "Goo, but my full name is actually {cps=25}Goober{/cps}."
 
     #choice!!!!!
     menu:
@@ -60,7 +74,8 @@ label hi:
     #just fancy scene transitions
     with fade
 
-    g"Oh well hi there :)"
+    #if you want variable in text put it in square brackets
+    g"Oh well hi there [yname] :)"
 
     # This ends the game, place it after endings.
     return
