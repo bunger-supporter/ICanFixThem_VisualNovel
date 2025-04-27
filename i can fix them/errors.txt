@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 55: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    style "my_text_style"
+                         ^
+
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Sun Apr 27 18:30:19 2025
