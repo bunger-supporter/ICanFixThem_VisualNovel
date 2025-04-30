@@ -936,13 +936,14 @@ label done:
     hide garmuppantsslightblush
 
 #    $ renpy.movie_cutscene("cg_poem.av1")
-    $ renpy.movie_cutscene("cg_poem.avi")
-#    $ renpy.movie_cutscene("cg_poem.webm")
+#    $ renpy.movie_cutscene("cg_poem.avi")
+    $ renpy.movie_cutscene("images/cg_poem_webm.webm")
 
 
 #    image cg_poem  = Movie(play="cg_poem.av1", size=(1920,1080), loop=False, xalign=0.5, yalign=0.5)
 #    image cg_poem  = Movie(play="cg_poem.avi", size=(1920,1080), loop=False, xalign=0.5, yalign=0.5)
-#    image cg_poem_webm  = Movie(play="cg_poem.webm", size=(1920,1080), loop=False, xalign=0.5, yalign=0.5)
+#    image cg_poem_webm  = Movie(play="images/cg_poem_webm.webm", size=(1920,1080), loop=False, xalign=0.5, yalign=0.5)
+#    show cg_poem_webm
 
     jump ending
 
