@@ -935,7 +935,14 @@ label done:
     Goo "*Ahem*" 
     hide garmuppantsslightblush
 
-    $ renpy.movie_cutscene("cg_poem.av1")
+#    $ renpy.movie_cutscene("cg_poem.av1")
+    $ renpy.movie_cutscene("cg_poem.avi")
+#    $ renpy.movie_cutscene("cg_poem.webm")
+
+
+#    image cg_poem  = Movie(play="cg_poem.av1", size=(1920,1080), loop=False, xalign=0.5, yalign=0.5)
+#    image cg_poem  = Movie(play="cg_poem.avi", size=(1920,1080), loop=False, xalign=0.5, yalign=0.5)
+#    image cg_poem_webm  = Movie(play="cg_poem.webm", size=(1920,1080), loop=False, xalign=0.5, yalign=0.5)
 
     jump ending
 
