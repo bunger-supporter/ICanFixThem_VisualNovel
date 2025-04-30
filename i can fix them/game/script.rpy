@@ -497,25 +497,23 @@ label goobert:
 label gooquestions:
     menu gooping:
 
-        "Ask about home." if not renpy.seen_label("home"):
+        "Ask about home.":
             jump home
 
-        "Ask about languages." if not renpy.seen_label("languages"): 
+        "Ask about languages.": 
             jump languages
 
-        "Ask about pets." if not renpy.seen_label("pets"):
+        "Ask about pets.":
             jump pets
 
-        "Ask about corn." if not renpy.seen_label("corn"):
+        "Ask about corn.":
             jump corn
 
-        "Ask about music." if not renpy.seen_label("music"):
-            jump music
+        "Ask about music.":
+            jump pinkfloyd
 
-        "Ok, that's enough conversation." if not renpy.seen_label("done"):
+        "Ok, that's enough conversation.":
             jump done
-    jump done
-
 
 label home:
     yn "So where are you from?" 
@@ -557,7 +555,7 @@ label corn:
     "What in the world does that mean??"
     jump gooquestions
 
-label music:
+label pinkfloyd:
     yn "What kind of music do you like?"
     hide gcorn
     show gcornhope
