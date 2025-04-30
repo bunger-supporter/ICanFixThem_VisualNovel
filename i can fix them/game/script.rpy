@@ -12,8 +12,7 @@ define x = Character("???")
 #code taken from online for a player naming themselves, dw about it
 define yn = Character("[yname]")
 default yname = "Beb Brisk"
-
-
+image poem  = Movie(play="cg_poem.av1", size=(1920,1080), loop=False, xalign=0.5, yalign=0.5)
 # The game starts here, labels separate sections of the story + 
 label start:
 
@@ -27,7 +26,7 @@ label start:
     #???
     #sigh... I said siggghhhhh......
     #in game
-    #cps effects speed that text appears, you can also do {b} for bold and {i} for italics, you can even change text size with {size}, {p} adds a break in one message so you have to press enter again
+    #cps effects speed that text appears, you can also do {b} for bold and {i} for italics, you can even change text size with {size}, {w} adds a break in one message so you have to press enter again
     x "sigh... I said siggghhhhh......"
     x "I hate errands. It’s the weekend, I should be playing video games, not running around town." 
     "You open your eyes to stare out to the world that has forsaken you. The birds chirp, the sun shines, but you can barely get yourself out of bed."
@@ -44,7 +43,7 @@ label start:
         $yname = "Beb Brisk"
 
 
-    scene mug
+    scene mug with fade
     show text "{color=#000001}{size=+20}[yname]{/size}{/color}"
         
 
@@ -58,7 +57,7 @@ label start:
     "You bumble around the store picking up this and that, and before you know it, the majority of morning has gone out the window (time flies when you’re 'having fun')."
     "After some tough grocerying, you pick a comfy-looking shelf and lean up against it to relax for a minute." 
     "Unfortunately, minutes seem to have been experiencing shrinkflation as well, since not even 5 seconds pass before the entire shelf, your sole haven in this grocery hell, violently tumbles over with a deafening crash."
-    scene bg_fallen
+    scene bg_fallen with fade
     "..."
     "From the rubble that was only moments ago recognizable as a canned bean shelf, you hear a faint, wimpy little squeak."
     "UH OH." 
@@ -91,7 +90,7 @@ label start:
 
     yn "I got you some paper towel! Here, I’ll clean you up." 
     show gbeans2
-    "You tenderly (not really) wipe as many beans off of him as you can. Except he’s like 1,000 feet tall, so there’s a lot of him to wipe beans off of.{p}It didn’t occur to you before you started this endeavor, but this is gonna be an awkward amount of standing here wiping beans off some guy you don’t know. Might as well introduce yourself."
+    "You tenderly (not really) wipe as many beans off of him as you can. Except he’s like 1,000 feet tall, so there’s a lot of him to wipe beans off of.wIt didn’t occur to you before you started this endeavor, but this is gonna be an awkward amount of standing here wiping beans off some guy you don’t know. Might as well introduce yourself."
 
     yn "I’m [yname] by the way. I, uh..." 
 
@@ -131,15 +130,28 @@ label start:
 
     "As you walk through the hallway, your spontaneous marathon started to hit you. Your legs wobbled like never before, making you finally sympathetic towards poor Jello."
     "Yet, your attention is suddenly drawn by a strange clown wandering towards you." 
+    show jhandssigh
     J "Hi um, sorry I'm a little lost, can you help me?" 
+    hide jhandssigh
+    show j
     yn "Oh uh sure, where are you headed?" 
+    hide j
+    show jsmile
     "You just hope it isn’t across the building." 
+    hide jsmile
+    show jfacesigh
     J "I’m supposed to be at the children’s sector, but this place is worse than a mirror maze. I’ve been roaming around for like half an hour." 
     "It's across the building." 
+    hide jfacesigh
+    show j
     yn "Yeah I think I know the way there, I can help. I’m [yname], by the way." 
+    hide j
+    show jhandshappy
     J "Oh, I’m Jess, nice to meet you." 
     "She puts her hand out to shake, but as soon as you grab it, you feel something nip at your fingers."
     yn "Youch!!" 
+    hide jhandshappy
+    show jhandssad
     J "AHH"  
     "The perpetrator quickly reveals itself as a beak pokes out from her sleeve. The dove squirms out of their shirt and flies down the hall, disappearing around the corner." 
     J "Yip-" 
@@ -147,40 +159,56 @@ label start:
     J "Gosh, I’m so sorry, I guess she got bored waiting for the magic show." 
     J "But hurry!! We gotta get her back!!!" 
     yn "I guess this is my life now..." 
+    hide jhandssad
     "You both run down the hallway after the bird, each step revealing a deep regret over improper time management."
+    show jsigh
     J "Poor Toodaloo must’ve been woken up by the handshake." 
     yn "Are you sure she’s not a swift??" 
+    hide jsigh
+    scene windowdove with fade
     "Each step becomes harder than the last, but the dove keeps moving forward. It makes a sharp turn into an empty office, fear hits as both you and jess notice the open window."
     "Just as it reaches the opening, hands fly up to catch Toodaloo, and you feel the feathers between your fingers as you grasp them."
     yn "I got her!!" 
     J "Oh yes!" 
-    "You step down and wrap the dove in your sweater while Jess brings out bird feed to calm it down. Both of you sit down together, soothing the dove. While waiting for Toodaloo to drowse off, there’s a slightly awkward air to the room. Suddenly, she yawns and leans her head against your shoulder. Her head up against your cheek, you can’t help but think about how warm she feels." 
+    scene hospital with fade
+    "You step down and wrap the dove in your sweater while Jess brings out bird feed to calm it down. Both of you sit down together, soothing the dove. While waiting for Toodaloo to drowse off, there’s a slightly awkward air to the room.{p} Suddenly, she yawns and leans her head against your shoulder.{p} Her head up against your cheek, you can’t help but think about how warm she feels." 
     yn "uh-" 
     "Jess scrambles away."
+    show jhandssad
     J "OH! I am so sorry I slept really poorly last night-" 
+    hide jhandssad
+    show jhandssigh
     J "Please don’t be mad-" 
     yn "Hey its fine I get it; I barely woke up this morning." 
+    hide jhandssigh
+    show jhandsblush
     J "..." 
     J "I’m really sorry about putting you through this [yname].. You didn’t deserve this, you were just close to my chaotic mess." 
     yn "Ah, no it’s fine... It was-" 
     yn "Interesting, that’s for sure." 
+    hide jhandsblush
+    show jsmile
     J "No, let me make it up to you, please. How about I buy you a coffee? Oh, no pressure, you just really helped out and I deeply appreciate it." 
     yn "Well, sure I’ll think about it." 
     yn "Plus..." 
     yn "It would be nice to spend some more time together." 
+    hide jsmile
+    show jfaceblush
     "Jess blushes a little." 
     J "Well, here’s my phone number. Call me if you want to see each other again." 
+    hide jfaceblush
     "Before you could even say bye, Jess runs off with Toodaloo on her shoulder."  
     yn "Huh, what a strange person." 
     "..."
     yn "Wait, I never gave her directions!" 
 
 #home!!
-    scene black
+    scene black with fade
     "You get back home and lay down."
     "Despite the botched shopping trip and missed appointment, today’s encounters really stuck out."
     show garmupskirt at left
     "Goo..."
+    show j at right
     "Jess..."
     yn "They both seem so strange, but I can’t stop thinking about them." 
 
@@ -192,9 +220,13 @@ label start:
 
         #answer one
         "Goo":
+            hide garmupskirt
+            hide j
+            show garmupskirt
             yn "Goo."
             yn "He was real nice, his sincerity really makes him easy to talk to."
             yn "Maybe hanging out will be fun, maybe we can get closer.."
+            hide garmupskirt
             yn "!!?"
             yn "What am I thinking?? I could've killed him, who forgives someone so easily after that???"
             yn "Goo, he seems like such a pushover, I wonder if there's anything going on in his head."
@@ -209,9 +241,13 @@ label start:
 
         #answer two
         "Jess":
+            hide garmupskirt
+            hide j
+            show j
             yn "Jess." 
             yn "She’s real sweet, I can’t help but want to spend time with her." 
-            yn "Maybe the coffee date won’t be the end, maybe it’ll even lead to something more.." 
+            yn "Maybe the coffee date won’t be the end, maybe it’ll even lead to something more.."
+            hide j 
             yn "!!?" 
             yn "What am I thinking?? We went on a literal wild dove chase, who even keeps a dove in their sleeve??" 
             yn "Jess, she seems so nervous, barely able to function within normal interactions." 
@@ -224,6 +260,11 @@ label start:
             jump jessbeginning
 
 
+
+
+
+
+
 #start of new section of the story
 label goobert:
 
@@ -233,11 +274,6 @@ label goobert:
     #just fancy scene transitions
     with fade
 
-    
-
-    #this line prepares the video at the end i think
-    #if the vid doesn't run, try deleting this line
-    image cg_poem  = Movie(play="cg_poem.mp4", size=(1920,1080), loop=False, xalign=0.5, yalign=0.5)
 
 
 
@@ -266,20 +302,20 @@ label goobert:
     Goo "Not really. Just, uh... practicing my awesome skateboard tricks! Oh yeah." 
 
     menu:
-    "Pretend like you believe him.":
-        "There’s pretty much no way that’s true, but you’ll humour him because you can tell he tried really hard to come up with that one."
+        "Pretend like you believe him.":
+            "There’s pretty much no way that’s true, but you’ll humour him because you can tell he tried really hard to come up with that one."
 
-        yn "Wow! Cool!"
+            yn "Wow! Cool!"
 
-    "Hmm...":
+        "Hmm...":
 
-        "He couldn’t sound less convincing if he tried."
+            "He couldn’t sound less convincing if he tried."
 
-        yn "... Skateboard tricks? Really?" 
+            yn "... Skateboard tricks? Really?" 
 
-        Goo "Y- Yup!" 
+            Goo "Y- Yup!" 
 
-        "He then proceeded to hold his phone a little farther from his face and make what you can only assume are 'skateboard noises' with his mouth. "
+            "He then proceeded to hold his phone a little farther from his face and make what you can only assume are 'skateboard noises' with his mouth. "
 
 
     yn "Anyway, I was wondering if maybe you’d like to hang out sometime?"
@@ -350,7 +386,7 @@ label goobert:
 
     scene apartment
     Goo "How about we meet up today at noon for co-"
-    scene town
+    scene bg_town
 
     yn "..."
 
@@ -478,6 +514,7 @@ label gooquestions:
 
         "Ok, that's enough conversation." if not renpy.seen_label("done"):
             jump done
+    jump done
 
 
 label home:
@@ -565,7 +602,7 @@ label done:
 
     "Time to head home!"
 
-    scene home
+    scene apartment
     "That Goo guy sure is something..."
     "He’s like..."
     "The man of your dreams..."
@@ -582,7 +619,7 @@ label done:
     scene black with fade
 
 
-    scene home with fade
+    scene apartment with fade
     "About a week has passed since your date with Goo."
     "You’ve tried reaching him since, but to no avail."
     "Hey, it only took you about 6 calls to remember his phone was in a well somewhere."
@@ -622,7 +659,7 @@ label done:
 
     scene hewwooo
     Goo "Helloooo! Helloooo!"
-    Goo "Delivery for yname!" 
+    Goo "Delivery for [yname]!" 
 
     "You open the door."
     scene apartment
@@ -633,20 +670,20 @@ label done:
     yn "Nice to see you again!" 
 
     menu: 
-    "Hug him!":
+        "Hug him!":
 
-        "You wrap your arms around him. He smells nice???"
-        hide gmailarmuphappy
-        show gmailarmupbigblush
-        Goo "!!!" 
+            "You wrap your arms around him. He smells nice???"
+            hide gmailarmuphappy
+            show gmailarmupbigblush
+            Goo "!!!" 
 
-        "When you let go, he hands you an envelope with your name (written in huge letters) on it."
-        hide gmailarmupbigblush
-        show gmailarmuphappy
+            "When you let go, he hands you an envelope with your name (written in huge letters) on it."
+            hide gmailarmupbigblush
+            show gmailarmuphappy
 
-    "Dap him up? (99% change of failure)":
+        "Dap him up? (99\% change of failure)":
 
-        "You lift your arm to dap him up and he enthusiastically places an envelope in your hand. Your name is written on it in huge letters."
+            "You lift your arm to dap him up and he enthusiastically places an envelope in your hand. Your name is written on it in huge letters."
 
 
     Goo "For you! Go ahead, open it!" 
@@ -898,7 +935,7 @@ label done:
     Goo "*Ahem*" 
     hide garmuppantsslightblush
 
-    show cg_poem
+    $ renpy.movie_cutscene("cg_poem.av1")
 
     jump ending
 
@@ -939,6 +976,13 @@ label ending:
     return
 # end of goo route!!!!!!!!!!!!
 
+
+
+
+
+
+
+
 label jessbeginning:
     
     scene apartment 
@@ -976,22 +1020,37 @@ label jessbeginning:
     "You decided that it was better to think while walking than to miss the date."
     jump jesscoffeepart1
 
-label jesscoffeepart1:  
+label jesscoffeepart1: 
+    scene cafe with fade
     "You pull up to the cafe, filled with hope and anxiety. You check the time, despite your elongated route, you still arrive 10 minutes early. Still, there’s only so many circles someone can walk without drawing suspicion." 
     yn "huh?" 
+    show j
     "Suddenly, you see her. Jess, more early than you, sitting at one of the tables. She awkwardly waves to you and you head over."
     yn "I guess we’re both early then." 
+    hide j
+    show jhappy
     J "Looks like it, heheh." 
+    hide jhappy
+    show j
     J "..." 
     yn "..." 
+    hide j
+    show jhandsblush
     J "..." 
     "Before you sat down, all sorts of ideas ran through your mind as to how this chat would go. Now that you’re here though, it seems as if none of them would come true. You forgot you really didn’t know anything about Jess."
+    hide jhandsblush
+    show jhands
     yn "So... what do you do for a living?" 
     "As soon as the words come out of your mouth, you can’t help but be embarrassed at the obviousness of the answer."
+    hide jhands
+    show jhandshappy
     "Jess giggles."
+    hide jhandshappy
+    show jhandssmile
     J "well, I don’t just dress like this for fun," 
-    yn "(just?)" 
+    yn "{size=20}just?{/size}" 
     J "I’m a professional clown." 
+    hide jhandssmile
 
 label clownquestions:
     menu clowning:
@@ -1011,57 +1070,99 @@ label clownquestions:
     jump jesscoffeepart2
 
 label hard:
-    J "... it can be, but I’ve been in the biz so long that I’m used to the hard parts." 
+    show j
+    J "... it can be, but I’ve been in the biz so long that I’m used to the hard parts."
+    show jsigh 
     J "Although I can’t really handle group performances." 
+    hide jsigh
     jump clownquestions
 label clown:
+    show jfacesmile
     J "Ough, as long as I can remember." 
-    yn "Did you start as a kid?" 
+    yn "Did you start as a kid?"
     J "I think I was around 15 when I started." 
+    hide jfacesmile
+    show jhands
     J "I’m 28 by the way, I’ve been told i have kind of a young face." 
-    "You wonder if it's her face or the layers of makeup over it." 
+    "You wonder if it's her face or the layers of makeup over it."
+    hide jhands
     jump clownquestions
 label childhood:
+    show j
     J "I don’t think so." 
+    show jsigh
     J "Don’t get me wrong I love the genre, but sometimes it feels like I’m more clown than Jess." 
+    hide jsigh
     jump clownquestions
 label what:
+    show jhandssmile
     J "some different things." 
+    hide jhandssmile
+    show jfacehappy
     J "My favourite job is cheering up some of the child patients at the hospital, but I also do birthday parties and some clown shows." 
+    hide jfacehappy
+    show jsmile
     J "We’re actually hosting one soon if you want to check it out." 
+    hide jsmile
     jump clownquestions
 
 label jesscoffeepart2:
+    show jhandssmile
     yn "Do you make a lot being a clown?" 
-    J "Haha, no" 
+    hide jhandssmile
+    show jhandssad
+    J "Haha, wno" 
     yn "Maybe I should buy your coffee then *chuckles*" 
+    hide jhandssad
+    show jsad
     J "Wha- Wh- But I wanted to thank you!!" 
+    hide jsad
+    show jsigh
     "Jess takes a deep breath. Her voice slows."
+    hide jsigh
+    show jhandsblush
     J "Genuinely. Like I caused such a mess, and i really appreciate your help. Toodaloo does too, she’s doing much better now. Especially since she’s on break from magic tricks." 
     yn "Hey, there’s no need to get so hung up on it. Would you believe that I almost pancaked a guy beforehand at the grocery store?" 
+    hide jhandsblush
+    show jfacesmile
     J "What??? Are you the one that dropped the shelf!?" 
     yn "How did you know????" 
+    hide jfacesmile
+    show jfacehappy
     J "It was on the local news!" 
     "You both snicker at the events that transpired the day before. Whatever awkwardness that was there at the beginning had disappeared. Rather than a stranger, you saw before you a friend."
+    hide jfacehappy
+    show jface
     yn "Hey, why was the clown’s bag so full?" 
     "Jess stares for a moment."
+    hide jface
+    show j
     J "Well, why don’t I check?" 
     "She picks up her purse from under the table, its just as colourful as she was. She pulls out her wallet, then a scarf, then another scarf, and another."
-    "Not too long and she’s covered head to toe in scarves all tied together."  
+    "Not too long and she’s covered head to toe in scarves all tied together." 
+    hide j
+    show jsmile 
     J "Well, seems we have our answer." 
     "She muffles out from the inside of her tent." 
     yn "Well, i was gonna say ‘because it had to carry their emotional baggage,’ but that works too." 
+    hide jsmile
+    show jfacesmile
     J "pft." 
+    hide jfacesmile
+    show jhandshappy
     J "HAHAHAHAHAHAHAHHAHAHAH!!!" 
     "You’re caught off guard, uncertain if she truly thought you were that funny, or if she’s overcompensating."
     "Her voice, hoarse, almost reassured your worries."
+    hide jhandshappy
+    show jsmile
     J "Ah shucks, between the two of us, you should’ve been the clown!" 
     yn "Thanks!" 
     J "You should meet my buddy, Binko, he’s got some good ones too." 
     yn "Well, you want to hear another?" 
+    hide jsmile
+    scene black with fade
     "The date went on. Laughs were thrown around as jokes were passed. Eventually, the poor workers had to ask you to leave as you raised the decibel level in the room by at least 30. Before separating, you agreed to another date. Well, not quite an official date yet, but Jess flushed face, even through makeup, seemed to want to say it."
     "Just, for the moment, you appreciate the one you already had."
-    scene black
     jump jesspark
     
 label jesspark:
@@ -1069,120 +1170,208 @@ label jesspark:
 
     scene park 
     "This time, it’s going to be a pleasant stroll through the park. Once again you arrive early and still are beaten out by Jess."
+    show jhandssmile
     J "Hi! Nice day, isn’t it?" 
     "You’re starting to wonder if the makeup is just actually her skin."
-    yn "Yeah definitely, why did you want to be here?" 
+    yn "Yeah definitely, by the way, why did you pick the park?"
+    hide jhandssmile
+    show jhands 
     J "Well, it’s always good to get fresh air. The atmosphere at the rehearsal hall is like mildew." 
     yn "Right, you gotta practice for that show soon." 
+    hide jhands
+    show jhandssigh
     J "Yup, and my boss is a bit of a perfectionist so it’s pretty draining." 
-    yn "Well, at least you get a little break from clown stuff right now (as much as you can in full costume)." 
-    J "Oh yes! Just got to enjoy the suuuuunnnnnnnn-" 
-    "Jess slides forward as she steps on a banana peel, pushing her several meters down the path. She waves her arms as she attempts to stabilize, only bumping into those around her. They fall and launch their possessions up, which Jess struggles to catch. It started simple, a dog’s rubber ball, then a hat, and soon she was juggling a bowling pin, chainsaw, squirrel, and who knows what else."
+    hide jhandssigh
+    show j
+    yn "Well, at least you get a little break from clown stuff right now {cps=*2}{size=20}{i}as much as you can in full costume.{/i}{/size}{/cps}" 
+    J "Oh yes! Just got to enjoy the {cps=*0.5}suuuuunnnnnnnn-{/cps}"
+    hide j 
+    scene jugglepark with fade
+    "Jess slides forward as she steps on a banana peel, pushing her several meters down the path. She waves her arms as she attempts to stabilize, only bumping into those around her. They fall and launch their possessions up, which Jess struggles to catch.{w} It started simple, a dog’s rubber ball,{w} then a hat,{w} and soon she was juggling a bowling pin, chainsaw, squirrel, and who knows what else."
     J "AHHHH HELP!!!" 
     "She screams as the banana continues forward. You chase after her, trying to keep all of your limbs intact. It seems impossible, everything bounced and moved at alarming speeds, but eventually the laws of physics caught up to her as the sliding slows and Jess could get a hold of the situation." 
     "She hands you the ball, drops the pin, throws the chainsaw, and eventually puts the squirrel down." 
+    scene park with fade
+    show jfacesigh
     J "Sigh, gosh... What a mess." 
     yn "Are you alright? That was crazy!!" 
+    hide jfacesigh
+    show jface
     J "Sadly not too different from the training exercises we got to do." 
     yn "So, it looks like you can’t really get a break from the clowning." 
     J "Looks like it..." 
+    hide jface
+    show jfacesad
     J "You know what? Honk this, I just want some rest." 
+    hide jfacesad
+    show jblush
     yn "Well maybe then you can come over to my place." 
     "You could feel your heartbeat. Where you being too forward?"
     yn "T-to relax that is...." 
+    hide jblush
+    show jhandsblush
     J "Sure, that sounds nice." 
+    scene black with fade
+    hide jhandsblush
     "So, off you went to your apartment. Despite trying to act cool, you couldn’t help but panic. Did you clean your room earlier? What if she hates the style? What if the building collapsed and you took her there for nothing? But, as you round the corner, you confirm that your apartment did not collapse and head up together."
     jump jessapartment
 
 label jessapartment:
-    scene apartment 
+    scene apartment with fade
     "Awkwardly, you let Jess inside. Her face is struck with some strange awe."
+    show jfacehappy
     J "Wow, it’s so spacious in here! You live like this?" 
     "You look at your studio apartment, a little confused."
+    hide jfacehappy
+    show jfacesmile
     J "Oh, sorry haha... I live with roommates, so my place seems way packed in comparison." 
     yn "That makes sense. Are you at least close?" 
+    hide jfacesmile
+    show jhands
     J "Not really, they’re kinda my colleagues so it feels weird to talk to them." 
-    yn "Well, I don’t have roommates, so feel free to make yourself at home." 
-    J "Thanks!" 
-    "Jess looks around nervously. Despite the circumstances, your apartment wasn’t decorated with the idea of guests in mind. She plops down in a corner."
+    yn "Well, I don’t have roommates, so feel free to make yourself at home."
+    hide jhands
+    show jsmile 
+    J "Thanks!"
+    hide jsmile 
+    "Jess looks around nervously. She plops down in a corner."
     yn "Oh, you can go on the sofa if you want-" 
-    J "N-no its fine, it’s good for back, I think.." 
+    show j
+    J "N-no its fine, it’s good for back, {w}I think.." 
+    hide j
+    show jfacesmile
     J "But man it must feel great to wake up in here." 
     J "Your own space... You can just lay down on the floor and think." 
     yn "Yeah, I guess I take it for granted, but it is nice." 
+    hide jfacesmile
+    show jsmile
     J "Woah what’s in that picture frame over there?" 
     
     menu:
         "My family": 
             yn "It's a picture of my family. I don’t live with them anymore, but it feels nice to see them." 
-            J "That’s beautiful, you all look so happy in it." 
+            J "That’s beautiful, you all look so happy in it."
+            hide jsmile
+            show jhands
             yn "What’s your family like?" 
             J "Well, I never had one growing up. Right now, the rest of the clowns are kinda like my family, even if we don’t get along much." 
+            hide jhands
+            show jfacesigh
             J "Oh, but i hope that changes!! I really want kids in the future." 
+            hide jfacesigh
+            show jface
             J "It’s just kind of hard in my current living situation and job." 
+            hide jface
 
         "Travel photos":
+            hide jsmile
+            show jhandshappy
             J "God it’s gorgeous there!" 
             yn "You ever went anywhere exciting?" 
+            hide jhandshappy
+            show jhandssmile
             J "No not really, clowning is a full-time job, not much space for breaks." 
             J "Plus I don’t think my boss would let me have the time off." 
             yn "... Your boss sounds bad." 
+            hide jhandssmile
 
+    show j
     yn "Then why are you working at that place?" 
+    hide j
+    show jhands
     J "It’s a job, [yname], I can’t just stop working." 
-    yn "Why don’t you look for another? I’ve heard you talk a lot about it, but never really anything positive. What makes you glued to that place?" 
+    yn "Why don’t you look for another? I’ve heard you talk a lot about it, but never really anything positive. What makes you glued to that place?"
+    hide jhands
+    show jhandsblush
     J "I- I" 
     J "..." 
+    hide jhandsblush
+    show j
     J "It’s kind of all I’ve ever known. I can’t just give up on the only thing I’ve ever done with my life." 
+    hide j
+    show jsmile
     J "Plus- I have a show in four days. It would be a shame to give up on all that work." 
-    yn "Okay." 
+    yn "Okay."
+    hide jsmile 
+    show jhands
     yn "..." 
     J "I should get going." 
     J "It was nice seeing you [yname]." 
     yn "You too." 
+    hide jhands
+    show jhandsblush
     J "..." 
+    hide jhandsblush
+    show jsmile
     J "It would make me happy if you checked out the show. You don’t have to of course, but still..." 
     yn "I’ll come around." 
-    J "Thanks." 
+    J "Thanks."
+    hide jsmile 
     "Jess leaves." 
     yn "Maybe i shouldn’t have pushed..." 
     "But you did."
 
-    scene black 
+    scene black with fade
     jump jesscircus
 
-label jeesscircus:
+label jesscircus:
     "It's the day of the show. You haven’t heard from Jess since your last encounter."
     yn "At this point, should I even go? Things were... awkward before." 
     "No, she wanted you there, you were certain of it. Before you change your mind again, you get ready and head out the door. You’ll worry about this being a mistake afterwards."
+    scene theatre
     "You wander towards the address. What stands in front of you seems to be a very generic theatre. As you prepare to pay, a clown begins to approach you." 
+    show jsmile
     J "You actually came." 
     yn "Did... did you not want me here?" 
-    J "What? No, I was hoping you would, I just didn’t know if you were going to." 
+    hide jsmile
+    show jblush
+    J "What? No, I was hoping you would, I just didn’t know if you were going to."
+    hide jblush
+    show j 
     J "You don’t need to wait in line, I already bought your ticket, just in case." 
     yn "Oh, thank you." 
+    hide j
+    show jsmile
     J "It's no problem." 
     J "Quick, the show’s almost started." 
+    hide jsmile
+    scene black
     "You head inside and take your seat, while Jess heads backstage."
-    "Soon, the red curtains draw back, to reveal a thin sheet. Lights turn on to reveal the shadowy appearance of clowns on the other side. They start moving immediately. Some dance, some juggle, one’s even balancing on a ball. Silhouetted chaos continues, till eventually one falls and breaks through the screen, Jess."
-    "Her head thuds against the floor after the impact, smudging the makeup on her forehead. You start to stand in shock, but the show continues. She wobblily gets up and walks away, her and another clown taking the screen. The clowns return to their show, one Jess less."
+    scene shadow with fade
+    "Soon, the red curtains draw back, to reveal a thin sheet. Lights turn on to reveal the shadowy appearance of clowns on the other side. They start moving immediately. Some dance, some juggle, one’s even balancing on a ball. Silhouetted chaos continues, till eventually one falls and breaks through the screen,{w} Jess."
+    "Her head thuds against the floor after the impact, smudging the makeup on her forehead.{w} You start to stand in shock, but the show continues. She wobblily gets up and walks away, her and another clown taking the screen. The clowns return to their show, one Jess less."
     "She never comes back on stage." 
+    scene black
     "After the show, the people begin to file out, but you can’t help but wait. The seats are now empty. You head towards the stage."
     yn "Hello? Jess?" 
     "Another clown points you in the direction."
     x "Oh, she’s in the back." 
+    scene bunkapartment
+    show jess
     "You enter a room to see a woman. It takes you a second to look past the antennae and blank face, but it’s her."
     yn "Jess are you okay??" 
     J "[yname]??" 
-    J "Don’t worry, I’m fine, just a slip-up." 
+    hide jess
+    show jesssmile
+    J "Don’t worry, I’m fine, just a slip-up."
     J "It happened once or twice during rehearsals too, so I’m used to it." 
-    yn "Jess, this isn’t healthy. Not only is your job impeding your happiness, but it’s hurting you physically." 
+    hide jesssmile
+    show jess
+    yn "Jess, this isn’t healthy. Not only is your job impeding your happiness, but it’s hurting you physically."
+    hide jess 
+    show jessangry
     J "You know what [yname], you’re right." 
     J "I’ve done a lot of thinking since we last talked, and i really can’t keep doing this." 
-    J "But I don’t know what to do!!" 
+    hide jessangry
+    show jesssad
+    J "But I don’t know what to do!!"
+    hide jesssad
+    show jessangry 
     J "I’ve done this my whole life, I live here backstage with the other performers, if I leave, where would I go?" 
     "Your chest begins to hurt. You take a deep breath, you know what you have to do now."
     yn "Live with me." 
+    hide jessangry
+    show jesssad
     J "What?" 
     yn "You heard me, live with me." 
     J "[yname] that’s crazy-" 
@@ -1192,10 +1381,17 @@ label jeesscircus:
     
         "I love you.":
             "Jess covers her mouth in shock."
+            hide jesssad
+            show jesshappy
             J "God, I thought it was just me..." 
             J "I love you too, [yname]..." 
+            hide jesshappy
+            show jesssmile
             "You look into each other's eyes. You reach for her hand, it’s soft."
             yn "Pack your stuff tonight. First thing tomorrow, we’ll move you in." 
+            hide jesssmile
+            show jesshappy
             J "Thank you.... [yname].... for everything." 
+            scene black with fade
             "THE END."
     return

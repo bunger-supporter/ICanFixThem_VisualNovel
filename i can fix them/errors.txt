@@ -2,9 +2,29 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 55: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    style "my_text_style"
-                         ^
+File "game/script.rpy", line 268: menu statement expects a non-empty block.
+    menu:
+        ^
+
+File "game/script.rpy", line 269: expected statement.
+    "Pretend like you believe him.":
+                                   ^
+
+File "game/script.rpy", line 274: expected statement.
+    "Hmm...":
+            ^
+
+File "game/script.rpy", line 635: menu statement expects a non-empty block.
+    menu: 
+        ^
+
+File "game/script.rpy", line 636: expected statement.
+    "Hug him!":
+              ^
+
+File "game/script.rpy", line 647: expected statement.
+    "Dap him up? (99% change of failure)":
+                                         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Apr 27 18:30:19 2025
+Wed Apr 30 06:08:03 2025

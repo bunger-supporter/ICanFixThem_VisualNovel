@@ -1,44 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 201, in script
-    python:
-  File "renpy/common/00start.rpy", line 202, in <module>
-    _init_language()
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language, force=True)
-  File "game/script.rpy", line 18, in <module>
-    color black
-NameError: name 'black' is not defined
+  File "game/script.rpy", line 1314, in script
+    scene black with fade
+ScriptError: could not find label 'jesscircus'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 201, in script
-    python:
-  File "C:\Users\iCan Student\OneDrive\Desktop\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\iCan Student\OneDrive\Desktop\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00start.rpy", line 202, in <module>
-    _init_language()
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language, force=True)
-  File "C:\Users\iCan Student\OneDrive\Desktop\renpy-8.3.7-sdk\renpy\translation\__init__.py", line 791, in change_language
-    new_change_language(tl, language)
-  File "C:\Users\iCan Student\OneDrive\Desktop\renpy-8.3.7-sdk\renpy\translation\__init__.py", line 746, in new_change_language
-    i.apply()
-  File "C:\Users\iCan Student\OneDrive\Desktop\renpy-8.3.7-sdk\renpy\ast.py", line 2813, in apply
-    value = renpy.python.py_eval(expr)
-  File "C:\Users\iCan Student\OneDrive\Desktop\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\iCan Student\OneDrive\Desktop\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 18, in <module>
-    color black
-NameError: name 'black' is not defined
+  File "game/script.rpy", line 1314, in script
+    scene black with fade
+  File "C:\Users\iCan Student\OneDrive\Desktop\renpy-8.3.7-sdk\renpy\ast.py", line 1712, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\iCan Student\OneDrive\Desktop\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'jesscircus'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 icanfixthem 1.0
-Sun Apr 27 18:34:48 2025
+Wed Apr 30 08:46:07 2025
