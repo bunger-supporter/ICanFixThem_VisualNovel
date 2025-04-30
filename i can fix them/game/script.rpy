@@ -233,13 +233,711 @@ label goobert:
     #just fancy scene transitions
     with fade
 
-    #if you want variable in text put it in square brackets
-    #text
     
 
-    # This ends the game, place it after endings.
-    return
+    #this line prepares the video at the end i think
+    #if the vid doesn't run, try deleting this line
+    image cg_poem  = Movie(play="cg_poem.mp4", size=(1920,1080), loop=False, xalign=0.5, yalign=0.5)
 
+
+
+    # Chapter 2 
+
+    scene apartment
+
+    "You get up with a spring in your step."
+
+    "You’re gonna ask Goo out on a date today!"
+
+    "You try to wait and call at a reasonable time, but nerves get the better of you. You’ve got all your courage gathered already, and waiting would be torture." 
+
+    "You pick up your phone and dial his number, which you can barely make out from the scratches in the paper towel that spent a whole day (including a bird chase) in your pocket."
+
+    "..." 
+
+    "..."
+
+    "..."  
+
+    Goo "Hello?"
+
+    yn "Hey, it’s [yname]! Are you busy?"
+
+    Goo "Not really. Just, uh... practicing my awesome skateboard tricks! Oh yeah." 
+
+    menu:
+    "Pretend like you believe him.":
+        "There’s pretty much no way that’s true, but you’ll humour him because you can tell he tried really hard to come up with that one."
+
+        yn "Wow! Cool!"
+
+    "Hmm...":
+
+        "He couldn’t sound less convincing if he tried."
+
+        yn "... Skateboard tricks? Really?" 
+
+        Goo "Y- Yup!" 
+
+        "He then proceeded to hold his phone a little farther from his face and make what you can only assume are 'skateboard noises' with his mouth. "
+
+
+    yn "Anyway, I was wondering if maybe you’d like to hang out sometime?"
+    yn "I feel like I made a pretty awful first impression yesterday, considering I almost killed you and stuff."
+    yn "I’d like to try making a better one, if you’d let me. So whaddya say?"
+
+    Goo "Wh-!! Me??? Hang out with-??" 
+
+    "You hear him hold the phone aside and stammer a little more to himself before composing himself and replying."
+    "Adorable."
+
+    Goo "Yeah, we could do that."
+    Goo "How about we meet up today at noon for co-" 
+
+    "And then you hear what sounds like a phone falling down a well, followed by a distant 'Oh no!'. Finally, you hear it hit the water and the call terminates."
+
+    "Huh."
+    "Welp."
+    "Alright then."
+
+    yn "WAIT."
+    yn "NOON IS IN 45 MINUTES."
+    yn "Guess I’m hauling ass this morning." 
+
+    scene bg_town
+
+    "You hastily get to the only coffee shop in town (you estimate that the chances he was gonna say 'coffee' are pretty strong)."
+
+    scene cafe
+
+    "You make it with a couple minutes to spare! Hooray!"
+    "You have a seat and pretend like you’re not glancing at the door every 10 seconds."
+    "..."
+    "..."
+    "Okay, so he’s a few minutes late."
+    "That’s alright. Maybe he doesn’t know where the only coffee shop in town is..."
+    "..."
+    "..."
+    "..."
+    "Ok, it’s been 20 minutes now."
+    "Maybe he really was doing sick skateboard tricks and he broke a bone."
+    "..."
+    "..."
+    "..."
+
+    yn "Hmmm..." 
+
+    "Alright, it’s been two hours and the shop owner is giving you the stink eye."  
+    "Well..."
+    "You’d never been stood up before."
+    "It doesn’t feel great."
+
+    "You get up to leave."
+    "Outside, there’s an unusual smell adrift on the wind."
+    "You definitely know it, but you can’t quite put your finger on it."
+    "You look around to see where it’s coming from, and that’s when you notice the pop-up corn stand."
+
+    scene bg_town
+
+    "Ah, of course."
+    "Boiled corn smell."
+    "Wait a minute..."
+
+    yn "Is that...?" 
+
+    "IT’S GOO!!!"
+    "Standing at... a corn... stand..."
+
+    scene apartment
+    Goo "How about we meet up today at noon for co-"
+    scene town
+
+    yn "..."
+
+    yn "Good grief." 
+
+    scene bg_corn
+
+    "You catch his eye and his face lights up, and..."
+    "IS HIS TAIL WAGGING??"
+    "THAT’S ADORABLE!!!!!"
+
+    show gcornhappy
+
+    "You go meet up with him and apologize a thousand times."
+    "It seems like he hadn’t at all noticed two hours had passed."
+
+    Goo "Hi there! :D" 
+
+    "He hands you a corn cob. It’s covered in dog hair."
+
+    Goo "Wanna go for a walk?" 
+
+    yn "I- of course!" 
+
+    Goo "Yay!"
+    hide gcornhappy
+    show gcornsad
+    Goo "We can’t go very far, though."
+    Goo "I’m my boss’ only employee, so he’s very good at noticing when I go over my lunch break time." 
+    hide gcornsad
+    "Ok... and with that said, you go for a walk."
+
+    scene bg_town
+
+    "You’re not terribly familiar with this part of town, so Goo leads the way."
+
+    "It occurs to you that you’ve never been on a date before, and, well, you don’t know anything about this guy, really."
+    "Gotta find something interesting and sustainable to talk about."
+    "Thousands of brilliant conversation topics flash through your head."
+    "You’ve been training your whole life for this."
+    "Conversation is one of your greatest attributes."
+    "You’re about to win his entire heart over simply by impressing him with your judicious and witty choice of topic." 
+
+    "Just kidding, you start talking about the weather."
+
+    yn "Weather’s nice." 
+
+    show gcornhope
+    Goo "Yup." 
+
+    yn "I guess you probably hear the ol’ 'How’s the weather up there?' bit pretty often, huh?" 
+    hide gcornhope
+    show gcornsad
+    Goo "Not really... no one talks to me..." 
+
+    "Gulp. How do you even respond to that??"
+    hide gcornsad
+    show gcorn
+    Goo "Oh wait, yes actually, my boss says that to me every single morning when I walk into work."
+    Goo "And then, when I trip on the banana peel he places in front of my mailbag every day, he goes 'How’s the weather down there?'" 
+
+    yn "He- You- Every day????" 
+    hide gcorn
+    show gcornhope
+    Goo "Oh don’t worry, it’s alright, he lets me eat the banana peel after, if I ask nicely."
+    Goo "They’re my favourite!" 
+
+    "His gaze drifts off to the skyline and he licks his chops."
+    "..."
+    "Is he just thinking about banana peels?"
+    "You feel a profound desire to introduce him to a new favourite food that isn’t banana peels."
+
+    yn "I like your skirt, by the way." 
+    hide gcornhope
+    show gcornslightblush
+    Goo "Oh... thanks..."
+    hide gcornslightblush
+    show gcornsad
+    Goo "My boss makes fun of me a lot for always wearing skirts, but I have to, because no pants in the world fit me." 
+
+    "Does... does he know people can sew their own pants?"
+    hide gcornsad
+    show gcornhope
+    Goo "You know, I’ve never told this to anyone, but my greatest dream is to someday own my very own pants."
+    Goo "And they would fit me just right and I could wear them all around town."
+    Goo "And my boss would say 'Wowie! Those are some beautiful pants, Goo! I might even consider making you employee of the month!'"
+    Goo "Sigh..." 
+
+    yn "Aren’t you his only employee?" 
+    hide gcornhope
+    show gcorn
+    Goo "Yeah..."
+    hide gcorn
+    show gcornsad
+    Goo "But he always makes himself employee of the month anyway." 
+
+    "Wow..."
+    hide gcornsad
+    show gcorn
+    "His gaze drifts off again."
+    "Guess he’s the pensive type."
+    "If he’s actually thinking, that is."
+    "Which you have no proof of."
+
+    "Well, you’re pretty conversationally warmed up now."
+    "Time to really get to know him!"
+
+label gooquestions:
+    menu gooping:
+
+        "Ask about home." if not renpy.seen_label("home"):
+            jump home
+
+        "Ask about languages." if not renpy.seen_label("languages"): 
+            jump languages
+
+        "Ask about pets." if not renpy.seen_label("pets"):
+            jump pets
+
+        "Ask about corn." if not renpy.seen_label("corn"):
+            jump corn
+
+        "Ask about music." if not renpy.seen_label("music"):
+            jump music
+
+        "Ok, that's enough conversation." if not renpy.seen_label("done"):
+            jump done
+
+
+label home:
+    yn "So where are you from?" 
+    hide gcorn
+    show gcornhope
+    Goo "Oh, I’m from a really nice city."
+    hide gcornhope
+    show gcorn
+    Goo "You’ve probably never heard of it, though..."
+    Goo "It’s called Montreal." 
+    "Huh. Never heard of it."
+    jump gooquestions
+
+label languages:
+    yn "Do you speak any other languages?" 
+    Goo "Woof."    
+    jump gooquestions
+
+label pets:
+    yn "Got any pets?"
+    hide gcorn
+    show gcornhope
+    Goo "I had a goldfish once."
+    Goo "I got it at a fair, and it cost me my whole month’s pay worth of coins trying to win it over and over again..."
+    hide gcornhope
+    show gcornsad
+    Goo "But a bird snatched it on my way home." 
+    "Why does the world hate this guy..."
+    yn "Your whole month’s worth of pay??"
+    yn "How long ago was this?" 
+    Goo "Last week..."
+    hide gcornsad
+    show gcorn
+    jump gooquestions
+
+label corn:
+    yn "Big fan of corn?"
+    Goo "It has its moments."
+    "What in the world does that mean??"
+    jump gooquestions
+
+label music:
+    yn "What kind of music do you like?"
+    hide gcorn
+    show gcornhope
+    Goo "There’s a Pink Floyd song I really enjoy."
+    Goo "It’s the one that’s 17 minutes long."
+    hide gcornhope
+    show gcorn
+    Goo "Can’t remember what it’s called, though..." 
+    "Approved. That’s a good one."
+    jump gooquestions
+
+label done:
+    hide gcorn
+    "He finishes his corn and then starts taking loud, crunchy bites out of the cob itself. You’re not even surprised."
+
+    "You hear a voice yell from off in the distance."
+
+    x "GOO!! YOUR 15 MINUTE LUNCH BREAK ENDED 2 HOURS AGO!! GET BACK HERE!!" 
+    show gcorncob
+    Goo "Uh oh!"
+    Goo "Gotta run!"
+    Goo "Itwasnicetalkingiwithyou okbye!!!!!!" 
+    hide gcorncob
+
+    play sound "vroom.mp3"
+    #if this doesn't work, try just 'play vroom'
+
+    "And thus, he disappears at a break-neck speed, leaving in his wake a Looney Toons style cloud of dust (and dog hair)."
+
+    "..." 
+
+    play sound "vroom.mp3"
+
+    "About 12 seconds later, he runs past you in the opposite direction, wearing his mailman uniform (which seems to just be a hat) and carrying a mailbag about the size of Santa Claus’ toy bag, and then he disappears into the horizon."
+
+    "..."
+    "..." 
+
+    "That was a great date!"
+
+    play sound "fanfare.mp3"
+
+    "Time to head home!"
+
+    scene home
+    "That Goo guy sure is something..."
+    "He’s like..."
+    "The man of your dreams..."
+    "Sigh..." 
+
+    "Tonight, you fall asleep with a great big smile on your face."
+
+    scene black with fade
+
+    "And you even dream of him..."
+
+    scene bg_fish with fade
+    
+    scene black with fade
+
+
+    scene home with fade
+    "About a week has passed since your date with Goo."
+    "You’ve tried reaching him since, but to no avail."
+    "Hey, it only took you about 6 calls to remember his phone was in a well somewhere."
+    "Ayway, today’s the day you usually get your mail, so you’re patiently waiting by the door."
+    "He probably normally just drops it and keeps running, but you have a gut feeling that today, he’s gonna stop to say hello."
+    "Any second now..."
+
+    "..."
+
+    "..."
+
+    "..."
+
+    "..."
+
+    "..."
+
+    "..."
+
+    "..."
+
+    "..."
+
+    "..."
+
+    "..."
+
+    "..."
+
+    "..."
+
+    "..."
+
+    "*DING DONG* "
+
+    "You scurry to the door."
+
+    scene hewwooo
+    Goo "Helloooo! Helloooo!"
+    Goo "Delivery for yname!" 
+
+    "You open the door."
+    scene apartment
+    show gmailarmuphappy
+    "You don’t realize it, but you’re blushing ever so slightly."  
+
+    yn "H- hi Goo!"
+    yn "Nice to see you again!" 
+
+    menu: 
+    "Hug him!":
+
+        "You wrap your arms around him. He smells nice???"
+        hide gmailarmuphappy
+        show gmailarmupbigblush
+        Goo "!!!" 
+
+        "When you let go, he hands you an envelope with your name (written in huge letters) on it."
+        hide gmailarmupbigblush
+        show gmailarmuphappy
+
+    "Dap him up? (99% change of failure)":
+
+        "You lift your arm to dap him up and he enthusiastically places an envelope in your hand. Your name is written on it in huge letters."
+
+
+    Goo "For you! Go ahead, open it!" 
+
+    "Is he just gonna stand there while you open the letter and read it in front of him???"
+    "Alright.....?"
+
+    "You tear the envelope and pull out the (surprisingly) tremendously neatly folded letter."
+    "You actuallt didn't know it was possible to fold a paper this precisely."
+    "Guess he’s got some talent after all."
+    hide gmailarmuphappy
+
+    show cg_letter
+    "..."
+    hide cg_letter
+    show gmailarmuphappy
+
+    "You look at him with 'a hint of confusion' (what the hell is happening) in your eyes."
+
+    yn "Ok???? I’ll be there??" 
+    Goo "Yaaay! :D"
+    hide gmailarmuphappy
+    "And then he runs off, at his usual Mach speed."
+
+    "..." 
+
+    "Well alright."
+
+    "Once he’s out of sight (so approximately 3 seconds later), you get right to work."
+    "The rest of your day will be spent sewing the biggest pants of all time."
+
+    "..." 
+
+    "..." 
+
+    scene cg_morning
+    "Wow! It’s tomorrow already! Isn’t it great how the world works?"
+
+    "You pack your gift and make your way to the corn stand."
+    "Huh, it’s gone."
+    "Guess corn season’s over already."
+    "Too bad."
+
+    "You head what feels like 2 km west, as instructed."
+    "You don’t quite know what you expected, but this wasn’t even close."
+
+    scene bg_field
+
+    "It’s the plainest, emptiest, flattest field you’ve seen in your life."
+    "Heck, possibly most in the world."
+    "But aha!"
+    "What’s that in the distance?"
+
+    scene bg_mini_party
+
+    "Time to investigate!"
+
+    "..."
+
+    "Big field, huh?"
+
+    "..." 
+
+    "You made it!"
+
+    scene bg_party
+
+    "There’s an assortment of large rocks and logs strewn about the area."
+
+    "How’d he do that?"
+
+    Goo "Oh hi, you’re right on time!" 
+
+    "Normally, being snuck up on in a field would’ve given you about a dozen heart attacks, but his voice is so inoffensive that you manage to make it out with only half a stroke."
+
+    show gbdayskirthandshappy
+
+    Goo "Thanks for coming! Alright, let’s begin!" 
+
+    "He proceeds to pull out a really crumpled piece of paper."
+    "Guess his folding skills are selective."
+    hide gbdayskirthandshappy
+    show gbdayskirtarmuphope
+
+    Goo "Ok, we’ll start with the gift. I’ve heard that people usually give a gift at birthday parties, so I made this for you!" 
+
+    "He hands you what appears to be a palm-sized bug constructed from bits and bobs that seem to have originated from ye olde junkyarde."
+    hide gbdayskirtarmuphope
+    show cg_bug
+
+    "A man after your own heart."
+    "You think to yourself, 'If this were a dating sim, my hearts would be maxxed out now.'"
+    hide cg_bug
+
+    "Wait what??"
+    "Why’d he give you a gift????"
+    "Does he really not know how birthday parties work??"
+    show gbdayskirthandshope
+    Goo "Wow, that was fun! Alright what’s next?" 
+
+    "He pulls the list out again, but, not having the most optimal paws for holding little pieces of paper, a mild gust of wind blows it right out of his grasp." 
+    hide gbdayskirthandshope
+    scene black
+
+    "And into your face."
+
+    "..."
+
+    "You grab the list and read it."
+    scene bg_party
+    show cg_list_real_real
+
+    "..." 
+    yn "... Goo?" 
+    hide cg_list_real_real
+
+    show gbdayskirtsad
+    Goo "Is it all wrong?"
+    Goo "Gosh, I’m really sorry..."
+    Goo "I’ve never been to a birthday party before, much less had one myself."
+    Goo "But I did read a book with a birthday party in it once, when I was younger."
+    Goo "I thought maybe I could recreate it..." 
+
+    "You’re at such a loss for words."
+    "Ok, hold on, first things first."
+
+    yn "Okay, Goo."
+    yn "I’ve been to many a birthday party in my day, and there’s something really important you should know."
+    yn "You’re not the one who gives me a gift."
+    yn "Although I appreciate the thought very much." 
+
+    "You take his hand and give him a kind smile."
+    hide gbdayskirtsad
+    show gbdayskirtarmupbigblush
+    "He blushes so hard you can see it through his fur."
+
+    yn "But no."
+    yn "I’M the one who’s supposed to give YOU a gift."
+    yn "Close your eyes." 
+    hide gbdayskirtarmupbigblush
+    "You reach into your bag and gingerly pull out the humongous pair of pants you made for your prince charming."
+    "You hold them out for him."
+
+    yn "Now open your eyes." 
+    show gbdayskirthandshappy
+    Goo "!!!!!!" 
+
+    Goo "ARE THOSE??!?!"
+    Goo "PANTS!!??!?!?!"
+    Goo "FOR ME!?!?!?!?!?!"
+    Goo "But... but... there’s no way these are gonna fit, right?" 
+
+    "He puts them on ."
+    hide gbdayskirthandshappy
+    show gbdaypantshandsbigblush
+    "They couldn’t possibly fit any better."
+
+    Goo "WOOOOW!!!!!!" 
+
+    "He jumps up super high, and then takes a big giant lick at the side of your face."
+
+    Goo "I’m so happy I could- I could-" 
+
+    "And then he passes out."
+
+    hide gbdaypantshandsbigblush
+
+    "Luckily..."
+
+    scene cg_he_died
+    "You caught him."
+
+    "Wow, this guy weighs like 3 grams."
+
+    "Now what are you gonna do with him?"
+
+    yn "Oh! I got it!"  
+
+    "You’re gonna take him out for a REAL day of birthday fun!"
+
+    yn "Hmm... where to first?" 
+
+    "..." 
+
+    scene black
+
+    "The day went by."
+    "You two had... well, just about the most fun you’ve had in years!"  
+
+    "You went roller skating..."
+
+    Goo "Weee!" 
+
+    "You went to a clown show..."
+
+    Goo "Heehee!" 
+
+    "You got ice cream..."
+
+    play sound "splat.mp3"
+
+    Goo "Aw... mine fell on the floor :(" 
+
+    "You played laser tag..."
+
+    Goo "AAAH!!" 
+
+    "You went to see a movie..."
+
+    Goo ":0" 
+
+    "And then you brought him home."
+
+    scene apartment
+    show ghandspantshappy
+    Goo "That must have been the second best day off my whole life!"
+    Goo "It comes really close to that day where my boss let me have TWO banana peels, but, y’know..."
+    Goo "There’s just something unbeatable about two banana peels." 
+
+    "Can’t argue with that, I guess..."
+
+    yn "Sit down, make yourself comfy."
+    yn "I’m gonna bake you a birthday cake!" 
+
+    Goo "Oh boy!"
+    Goo "Can I help?" 
+
+    "You ponder the nutritional value of a dog hair cake..."
+
+    yn "Nah, I got this." 
+    hide ghandspantshappy
+
+    "You dust off your mom’s peanut butter cake recipe, take out the ingredients and get to work."
+
+    "While you’re crafting Goo’s cake (and doing so with all the love in your heart, might I add), he rustles about and reveals yet another piece of paper."
+    show garmuppantsslightblush
+    Goo "Hey..."
+    Goo "[yname]?"
+    Goo "Would it be OK if I read you my latest poem?"
+    Goo "I’m really proud of it..." 
+
+    "HE WRITES POETRY?????"
+
+    yn "Wh-"
+    yn "Of course!"
+    yn "It would be my pleasure to listen." 
+
+    Goo "Alright then... here goes.."
+    Goo "*Ahem*" 
+    hide garmuppantsslightblush
+
+    show cg_poem
+
+    jump ending
+
+label ending:
+    scene apartment
+    "..."
+
+    yn "Oh, Goo... that was..." 
+
+    show garmuppantsbigblush
+
+    Goo "You know, [yname]..."
+    Goo "I had a wonderful time with you today."
+    Goo "And I was wondering if maybe..."
+    Goo "We could see each other, like, every day?"
+    Goo "What I mean is..."
+    Goo "Well... it’s... you know..."
+    Goo "I-" 
+
+    yn "You want us to date?" 
+
+    Goo "Yes... I think I would like that." 
+
+    "Your heart is practicing its jackhammer impression in your chest."
+
+    yn "Alright."
+    yn "I hereby pronounce you: my boyfriend." 
+
+    Goo "Yaaayyy! :D" 
+
+    "You walk over and kiss him on the cheek."
+    "Well, more like on the side of his long, long nose."
+    hide garmuppantsbigblush
+    "You go back to the kitchen to put the cake in the oven, and then you return to the couch and lie in his arms..."
+    scene black with fade
+    "You’re happier than ever."
+
+    return
+# end of goo route!!!!!!!!!!!!
 
 label jessbeginning:
     
