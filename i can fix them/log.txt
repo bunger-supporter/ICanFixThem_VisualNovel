@@ -1,13 +1,13 @@
-2025-04-30 13:53:34 UTC
+2025-05-04 00:18:28 UTC
 Windows-10-10.0.19045
 Ren'Py 8.3.7.25031702
 
-Early init took 0.09s
-Loading error handling took 0.18s
-Loading script took 2.58s
-Loading save slot metadata took 0.05s
+Early init took 0.11s
+Loading error handling took 0.17s
+Loading script took 2.57s
+Loading save slot metadata took 0.06s
 Loading persistent took 0.00s
-Running init code took 0.18s
+Running init code took 0.19s
 Loading analysis data took 0.00s
 Analyze and compile ATL took 0.01s
 Reloading save slot metadata took 0.04s
@@ -25,8 +25,8 @@ Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.09s
-Save screen analysis took 0.06s
-Prepare screens took 0.28s
+Analyze screens took 0.04s
+Save screen analysis took 0.02s
+Prepare screens took 0.19s
 Save pyanalysis. took 0.02s
 Save bytecode. took 0.04s
